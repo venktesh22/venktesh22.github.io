@@ -275,37 +275,181 @@
         </div>
         <!-- Tab 1: Welcome / Overview -->
         <div id="tab-welcome" class="tab-content active">
-            <div style="padding: 24px; max-width: 800px; margin: 0 auto;">
-                <h1 style="font-size: 24px; margin-bottom: 10px;">
-                    NC LPA Access Dashboard
-                </h1>
-                <p style="font-size: 14px; color: #4b5563; margin-bottom: 18px;">
-                    This tool visualizes access to Local Planning Agencies (LPAs) across North Carolina.
-                    Each Census block group is shaded by the distance from its population-weighted centroid
-                    to the nearest active LPA. The sidebar lets you filter LPAs by tier and rating, and
-                    turn individual locations on or off to see how network changes affect access.
-                </p>
-                <h2 style="font-size: 18px; margin-bottom: 8px;">How to use this dashboard</h2>
-                <ol style="font-size: 14px; color: #4b5563; padding-left: 20px;">
-                    <li style="margin-bottom: 6px;">
-                        Go to the <strong>Interactive Dashboard</strong> tab.
-                    </li>
-                    <li style="margin-bottom: 6px;">
-                        Use the filters to search LPAs by name, rating, or tier.
-                    </li>
-                    <li style="margin-bottom: 6px;">
-                        Toggle LPAs on/off to see how population access changes in the
-                        <strong>Statistics</strong> panel.
-                    </li>
-                    <li style="margin-bottom: 6px;">
-                        Hover or click on map features to view local details.
-                    </li>
-                </ol>
-                <p style="font-size: 13px; color: #6b7280; margin-top: 16px;">
-                    When you're ready, click the <strong>Interactive Dashboard</strong> tab above.
-                </p>
+            <div style="
+                min-height: calc(100vh - 42px);
+                padding: 32px 16px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background: radial-gradient(circle at top left, #e0f2fe, #eff6ff 40%, #f9fafb 80%);
+            ">
+                <div style="
+                    background: white;
+                    border-radius: 18px;
+                    box-shadow: 0 18px 45px rgba(15, 23, 42, 0.18);
+                    max-width: 960px;
+                    width: 100%;
+                    padding: 32px 40px;
+                    border: 1px solid #e5e7eb;
+                ">
+                    <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 18px;">
+                        <div style="
+                            width: 40px;
+                            height: 40px;
+                            border-radius: 999px;
+                            background: linear-gradient(135deg, #1d4ed8, #22c55e);
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            color: white;
+                            font-size: 22px;
+                        ">
+                            📍
+                        </div>
+                        <div>
+                            <div style="font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em; color: #6b7280;">
+                                Prototype Viewer
+                            </div>
+                            <h1 style="font-size: 26px; margin: 2px 0 0 0; color: #0f172a;">
+                                NC License Plate Agency Access Dashboard
+                            </h1>
+                        </div>
+                    </div>
+
+                    <p style="font-size: 14px; color: #4b5563; margin-bottom: 18px; line-height: 1.6;">
+                        This prototype visualizes access to <strong>License Plate Agencies (LPAs)</strong> across North Carolina.
+                        Each Census block group is shaded by how far its population-weighted centroid is from the
+                        <strong>nearest active LPA</strong>. You can filter LPAs by tier and rating, toggle locations on or off,
+                        and see how those changes ripple through access metrics in real time.
+                    </p>
+
+                    <div style="
+                        display: flex;
+                        flex-wrap: wrap;
+                        gap: 12px;
+                        margin-bottom: 20px;
+                    ">
+                        <div style="
+                            flex: 1 1 200px;
+                            padding: 10px 12px;
+                            border-radius: 10px;
+                            background: #eff6ff;
+                            border: 1px solid #bfdbfe;
+                            font-size: 12px;
+                            color: #1d4ed8;
+                        ">
+                            <div style="font-weight: 600; margin-bottom: 4px;">What you see</div>
+                            <div>
+                                Block groups colored by <strong>distance bands</strong> to the nearest LPA, plus facility markers sized by tier and colored by rating.
+                            </div>
+                        </div>
+                        <div style="
+                            flex: 1 1 200px;
+                            padding: 10px 12px;
+                            border-radius: 10px;
+                            background: #ecfdf3;
+                            border: 1px solid #bbf7d0;
+                            font-size: 12px;
+                            color: #166534;
+                        ">
+                            <div style="font-weight: 600; margin-bottom: 4px;">What you can test</div>
+                            <div>
+                                Turn LPAs <strong>on/off</strong>, change filters, and track how population coverage and
+                                weighted average distance change between the <strong>baseline</strong> and <strong>current</strong> scenarios.
+                            </div>
+                        </div>
+                    </div>
+
+                    <h2 style="font-size: 16px; margin-bottom: 8px; color: #111827;">
+                        How to use this dashboard
+                    </h2>
+                    <ol style="font-size: 14px; color: #4b5563; padding-left: 20px; margin: 0 0 14px 0; line-height: 1.5;">
+                        <li style="margin-bottom: 6px;">
+                            Click the <strong>Interactive Dashboard</strong> tab at the top to open the map view.
+                        </li>
+                        <li style="margin-bottom: 6px;">
+                            Use the <strong>Filters</strong> panel to search LPAs by name, rating, or tier.
+                        </li>
+                        <li style="margin-bottom: 6px;">
+                            Toggle LPAs on/off to see how the <strong>Statistics</strong> panel and map colors respond.
+                        </li>
+                        <li style="margin-bottom: 6px;">
+                            Hover or click on map features and LPA markers to inspect local details.
+                        </li>
+                    </ol>
+
+                    <div style="
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        margin-top: 16px;
+                        gap: 12px;
+                        flex-wrap: wrap;
+                    ">
+                        <p style="font-size: 13px; color: #6b7280; margin: 0;">
+                            When you are ready, switch to the <strong>Interactive Dashboard</strong> tab to explore scenarios.
+                        </p>
+                        <button
+                            onclick="showTab('dashboard')"
+                            style="
+                                padding: 8px 16px;
+                                border-radius: 999px;
+                                border: none;
+                                background: linear-gradient(135deg, #1d4ed8, #22c55e);
+                                color: white;
+                                font-size: 13px;
+                                font-weight: 600;
+                                cursor: pointer;
+                                box-shadow: 0 10px 20px rgba(15, 118, 110, 0.25);
+                            "
+                            onmouseover="this.style.opacity='0.9';"
+                            onmouseout="this.style.opacity='1';"
+                        >
+                            Open Interactive Dashboard →
+                        </button>
+                    </div>
+                    <div style="
+                        margin-top: 28px;
+                        padding: 18px 20px;
+                        background: #f8fafc;
+                        border: 1px solid #e2e8f0;
+                        border-radius: 14px;
+                        box-shadow: 0 8px 22px rgba(0, 0, 0, 0.04);
+                    ">
+                        <h3 style="font-size: 15px; margin-bottom: 8px; color: #0f172a;">
+                            Acknowledgements
+                        </h3>
+                        <p style="font-size: 13px; line-height: 1.55; color: #475569; margin-bottom: 10px;">
+                            This research is supported by the North Carolina Department of Transportation.
+                            The primary design for the tool was developed by Mohammad Ashraf Ali, and refined
+                            through contributions from the research team. The views and accuracy of the information
+                            presented belong to the authors alone. NCDOT assumes no liability for the contents or use thereof.
+                        </p>
+
+                        <div style="
+                            font-size: 13px;
+                            line-height: 1.6;
+                            color: #475569;
+                            border-top: 1px solid #e2e8f0;
+                            padding-top: 10px;
+                        ">
+                            <div style="font-weight: 600; color: #1e293b; margin-bottom: 4px;">Project 1-1 Team</div>
+                            <div style="margin-bottom: 4px;">
+                                Dr. Venktesh Pandey, North Carolina Agricultural and Technical State University
+                            </div>
+                            <div style="margin-bottom: 4px;">
+                                Dr. Ali Hajbabaie, North Carolina State University
+                            </div>
+                            <div style="margin-bottom: 6px; font-weight: 600; color: #1e293b;">
+                                Graduate Students
+                            </div>
+                            <div>Mohd Ashraf Ali, Fahim Kafashan</div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
+
         <!-- Tab 2: Your existing dashboard layout -->
         <div id="tab-dashboard" class="tab-content">
             <div id="container">
